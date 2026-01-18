@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Milyonçu</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Theme Toggle -->
+    <button id="theme-toggle" aria-label="Toggle Day/Night Mode">
+        <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="5"></circle>
+            <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"></path>
+        </svg>
+        <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:none;">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+        </svg>
+    </button>
+
+    <!-- Branding -->
+    <div id="branding">
+        <p>Created by Ramo</p>
+        <div class="social-icons">
+            <a href="https://www.instagram.com/ramohax?igsh=eTJqaDAwN2kyejgw" target="_blank" title="Instagram">
+                <!-- Cleaner Instagram Icon -->
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+            </a>
+            <a href="https://www.linkedin.com/in/ramazan-h%C3%BCseynov-8545b1392?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" title="LinkedIn">
+                <!-- Cleaner LinkedIn Icon -->
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+            </a>
+        </div>
+    </div>
+
+    <!-- Background Blobs -->
+    <div class="blob-container">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+    </div>
+
+    <!-- Noise Texture -->
+    <div class="noise-overlay"></div>
+
+    <div class="app-container card-3d">
+        
+        <!-- Start Screen -->
+        <section id="start-screen" class="glass-panel active">
+            <h1 class="game-title">KİM MİLYONÇU<br>OLMAQ İSTƏYİR?</h1>
+            <div class="input-group">
+                <input type="text" id="player-name" placeholder="Ad və ya Soyad" autocomplete="off">
+            </div>
+            <div class="input-group">
+                <select id="player-group">
+                    <option value="" disabled selected>Qrup seçin</option>
+                    <option value="Full Stack 4">Full Stack 4</option>
+                    <option value="Full Stack 5">Full Stack 5</option>
+                    <option value="Full Stack 6">Full Stack 6</option>
+                </select>
+            </div>
+            <button id="start-btn" class="primary-btn">Oyuna Başla</button>
+            <button id="leaderboard-btn" class="secondary-btn">Liderlər</button>
+            <p class="credits">Idea müəllifi və müəllim: <span id="efraim-name">Əfraim</span></p>
+        </section>
+
+        <!-- Game Screen -->
+        <section id="game-screen" class="glass-panel hidden">
+            <div class="hud">
+                <div class="timer-container">
+                    <svg class="timer-svg" viewBox="0 0 100 100">
+                        <circle class="timer-bg" cx="50" cy="50" r="45"></circle>
+                        <circle class="timer-progress" cx="50" cy="50" r="45"></circle>
+                    </svg>
+                    <span id="timer-text">60</span>
+                </div>
+                <div class="stats">
+                    <div class="stat-box">
+                        <span class="stat-label">XAL</span>
+                        <span id="score-display">0</span>
+                    </div>
+                    <div class="stat-box">
+                        <span class="stat-label">SƏVİYYƏ</span>
+                        <span id="level-display">1</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="question-container">
+                <div id="question-text" class="glass-box">Sual yüklənir...</div>
+            </div>
+
+            <div class="options-grid">
+                <button class="option-btn" data-key="A"><span class="opt-label">A:</span> <span class="opt-text">Loading...</span></button>
+                <button class="option-btn" data-key="B"><span class="opt-label">B:</span> <span class="opt-text">Loading...</span></button>
+                <button class="option-btn" data-key="C"><span class="opt-label">C:</span> <span class="opt-text">Loading...</span></button>
+                <button class="option-btn" data-key="D"><span class="opt-label">D:</span> <span class="opt-text">Loading...</span></button>
+            </div>
+            
+            <div class="progress-bar">
+                <div id="progress-fill"></div>
+            </div>
+        </section>
+
+        <!-- Leaderboard Screen -->
+        <section id="leaderboard-screen" class="glass-panel hidden">
+            <h2>LİDERLƏR</h2>
+            <div class="leaderboard-container">
+                <table id="leaderboard-table">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Ad</th>
+                            <th>Qrup</th>
+                            <th>Xal</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Rows injected by JS -->
+                    </tbody>
+                </table>
+            </div>
+            <button id="back-btn" class="secondary-btn">Geri Qayıt</button>
+        </section>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
