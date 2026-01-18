@@ -94,6 +94,18 @@
                 <div id="question-text" class="glass-box">Sual yüklənir...</div>
             </div>
 
+            <div class="lifelines-container">
+                <button id="lifeline-5050" class="lifeline-btn" title="50/50">
+                    50:50
+                </button>
+                <button id="lifeline-audience" class="lifeline-btn" title="Audience Help">
+                    👥
+                </button>
+                <button id="lifeline-phone" class="lifeline-btn" title="Phone a Friend">
+                    📞
+                </button>
+            </div>
+
             <div class="options-grid">
                 <button class="option-btn" data-key="A"><span class="opt-label">A:</span> <span class="opt-text">Loading...</span></button>
                 <button class="option-btn" data-key="B"><span class="opt-label">B:</span> <span class="opt-text">Loading...</span></button>
@@ -103,6 +115,27 @@
             
             <div class="progress-bar">
                 <div id="progress-fill"></div>
+            </div>
+        </section>
+
+        <!-- Result Screen -->
+        <section id="result-screen" class="glass-panel hidden">
+            <h2 id="result-title">OYUN BİTDİ</h2>
+            
+            <div class="result-card">
+                <div class="result-row">
+                    <span>Toplam Xal:</span>
+                    <span id="result-score" class="highlight-text">0</span>
+                </div>
+                <div class="result-row">
+                    <span>Doğru Cavab:</span>
+                    <span id="result-correct" class="highlight-text">0</span>
+                </div>
+            </div>
+
+            <div class="result-actions">
+                <button id="replay-btn" class="primary-btn">Yenidən Oyna</button>
+                <button id="continue-btn" class="secondary-btn">Davam Et</button>
             </div>
         </section>
 
@@ -128,6 +161,23 @@
         </section>
 
     </div>
+
+    <!-- Audio Elements -->
+    <audio id="bg-music" loop>
+        <source src="assets/DmitrySosed - Kim Millioner olmak ister？ (Turkey) - Intro.mp3" type="audio/mp3">
+    </audio>
+    <audio id="sfx-timer" loop>
+        <source src="assets/Gaming Sound FX - Millioner Sound Effect .mp3" type="audio/mp3">
+    </audio>
+    <audio id="sfx-correct">
+        <source src="assets/toca_music - dogru olanda ses effekti.opus" type="audio/mp3">
+    </audio>
+    <audio id="sfx-wrong">
+        <source src="assets/uduzmaq sesi.mp3" type="audio/mp3">
+    </audio>
+    <audio id="sfx-keyboard">
+        <source src="assets/mesela aklıma gelen 2.mp3" type="audio/mp3">
+    </audio>
 
     <script src="script.js"></script>
 </body>
